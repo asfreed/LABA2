@@ -1,0 +1,17 @@
+﻿<Page x:Class="LABA2.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LABA2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1" Loaded="Page1_Loaded">
+
+    <Grid Background="White">
+        <Button Background="#FF35569B" Name="But1" Click="But_Click_Page_Next" Content="next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Margin="458,246,0,0" Height="28"/>
+        <ListBox x:Name="listBoxPage" HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="447" Margin="10,10,0,0"/>
+        <ListBox x:Name="listBoxCount" Margin="10,254,347,15"/>
+        <Button Background="#FF35569B" x:Name="dtLEave" Content="Переход в табличный вид" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Margin="250,246,0,0" Height="28" Click="dtLEave_Click" FontSize="12"/>
+    </Grid>
+</Page>

@@ -1,0 +1,91 @@
+﻿<Window x:Class="LABA2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LABA2"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="600" WindowStyle="ThreeDBorderWindow" Loaded="Window_Loaded" MaxWidth="600" MaxHeight="350">
+    <Grid x:Name="MainRoot" Background="White" RenderTransformOrigin="0.5,0.5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="361*"/>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="209*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="592" Grid.ColumnSpan="3">
+            <TabItem Header="SELECT" Margin="0,0,-6,-2" HorizontalAlignment="Left" Width="49">
+                <Frame Name="MainFrame" Background="White" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+            <TabItem Header="INSERT" Margin="-3,0,-1,-2">
+                <Grid Background="#FFE5E5E5" Margin="0,-1,0,1">
+                    <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,127,0,0" materialDesign:HintAssist.Hint="Источник угрозы" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.ColumnSpan="4"/>
+                    <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,44,0,0" materialDesign:HintAssist.Hint="Наименование УБИ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.ColumnSpan="4"/>
+                    <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="202,86,0,0" materialDesign:HintAssist.Hint="Нарушение доступности" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="202,44,0,0" materialDesign:HintAssist.Hint="Нарушение целостности" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="202,-3,0,0" materialDesign:HintAssist.Hint="Нарушение конфиденциальности" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,171,0,0" materialDesign:HintAssist.Hint="Объект воздействия" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.ColumnSpan="4"/>
+                    <Button Content="Добавить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="451,249,0,0" Click="Button_Click" FontWeight="Bold" Background="#FF35569B"/>
+                    <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,86,0,0" materialDesign:HintAssist.Hint="Описание" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.ColumnSpan="4"/>
+                    <Label x:Name="EXCEPTION" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,229,0,0" Width="208" Height="52" FontWeight="Bold" Grid.ColumnSpan="4" Foreground="#FFFB0404"/>
+                    <TextBox x:Name="textBoxid" HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,0,0,0" materialDesign:HintAssist.Hint="Идентификатор УБИ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.ColumnSpan="4"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="UPDATE" Margin="-2,0,-2,-2">
+                <Grid Background="#FFE5E5E5" Margin="0,-1,0,1">
+                    <Button Background="#FF35569B" Content="Изменить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="452,249,0,0" Click="Button_Click_2" FontWeight="Bold"/>
+                    <Label x:Name="EXCEPTION1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,226,0,0" Width="218" Height="53" FontWeight="Bold" Grid.ColumnSpan="3" Foreground="#FFC90909"/>
+                    <TextBox x:Name="textBoxID" HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="202,127,0,0" materialDesign:HintAssist.Hint="ID элемента" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox9" HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" materialDesign:HintAssist.Hint="Идентификатор УБИ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5,0,0,0"/>
+                    <TextBox x:Name="textBox8" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,86,0,0" materialDesign:HintAssist.Hint="Описание" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox10" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,44,0,0" materialDesign:HintAssist.Hint="Наименование УБИ" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox11" HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,127,0,0" materialDesign:HintAssist.Hint="Источник угрозы" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox12" HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="5,171,0,0" materialDesign:HintAssist.Hint="Объект воздействия" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox13" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="202,-3,0,0" materialDesign:HintAssist.Hint="Нарушение конфиденциальности" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox14" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="202,44,0,0" materialDesign:HintAssist.Hint="Нарушение целостности" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox x:Name="textBox15" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Margin="202,86,0,0" materialDesign:HintAssist.Hint="Нарушение доступности" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="DELETE" Margin="0,0,-4,-2">
+                <Grid Background="#FFE5E5E5" Margin="0,-1,0,1">
+                    <Label x:Name="EXCEPTION2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,89,0,0" Width="277" Height="73" FontWeight="Bold" Foreground="#FFFB0303"/>
+                    <Image x:Name="EZ" HorizontalAlignment="Left" Height="132" VerticalAlignment="Top" Width="132" Margin="224,43,0,0" Source="st,small,507x507-pad,600x600,f8f8f8.u1.jpg" Visibility="Hidden"/>
+                    <TextBox x:Name="textBox16" HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" materialDesign:HintAssist.Hint="Идентификатор УБИ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="199,196,0,0"/>
+                    <Button Background="#FF35569B" Content="Удалить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="236,249,0,0" Click="Button_Click_3" FontWeight="Bold"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="BefAfter" Margin="0,0,-4,-2">
+                <Grid Background="#FFE5E5E5" Margin="0,-1,0,1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125*"/>
+                        <ColumnDefinition Width="461*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="listBox2" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="289" Grid.ColumnSpan="2"/>
+                    <ListBox x:Name="listBox4" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="299" Grid.Column="1" Margin="164,0,-2,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="All" Margin="0,0,-4,-2">
+                <Grid Background="#FFE5E5E5" Margin="0,-1,0,1">
+                    <DataGrid Name="DTgreed" HorizontalAlignment="Left" Height="281" VerticalAlignment="Top" Width="576"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Save">
+                <Grid>
+                    <Image HorizontalAlignment="Left" Height="291" VerticalAlignment="Top" Width="586" Source="tabletka.jpg" Stretch="Fill"/>
+                    <Button Content="Сохранить в txt" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Margin="304,130,0,0" Height="42" Background="#FF970707" Click="Button_Click_4"/>
+                    <Button Content="Сохранить в xlsx" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Margin="111,148,0,0" Height="41" Background="#FF222EA2" Click="Button_Click_6"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Background="#FF35569B" Content="Обновить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81" Click="Button_Click_1" RenderTransformOrigin="-0.244,-5.25" Height="26" Grid.Column="2" FontSize="10" Margin="10,0,0,0"/>
+        <Button Background="#FF35569B" x:Name="fileButton" Content="Файл" HorizontalAlignment="Left" VerticalAlignment="Top" Width="63" Margin="91,0,0,0" Click="Button_Click_5" Height="26" Grid.Column="2" FontSize="10"/>
+        <Button Background="#FF35569B" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="154,0,0,0" Height="26" Grid.Column="2" Click="Button_Click_7" FontSize="10"/>
+    </Grid>
+</Window>
